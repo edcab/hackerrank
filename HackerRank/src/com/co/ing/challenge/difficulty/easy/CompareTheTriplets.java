@@ -1,4 +1,4 @@
-package com.co.ing.challenge.practice;
+package com.co.ing.challenge.difficulty.easy;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

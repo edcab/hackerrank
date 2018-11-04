@@ -1,4 +1,4 @@
-package com.co.ing.challenge.practice;
+package com.co.ing.challenge.difficulty.easy;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -6,18 +6,13 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * 
- * @author Edwin Cabezas
- *
- */
-public class AVeryBigSum {
+public class BirthdayCakeCandles {
 
-	// Complete the aVeryBigSum function below.
-    static long aVeryBigSum(long[] ar) {
+	// Complete the birthdayCakeCandles function below.
+    static int birthdayCakeCandles(int[] ar) {
+    	int max = Arrays.stream(ar).max().getAsInt();
+    	return (int) Arrays.stream(ar).filter(l -> l == max).count();
     	
-    	return Arrays.stream(ar).sum(); 
-
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -26,19 +21,21 @@ public class AVeryBigSum {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Ed\\Documents\\java\\res.txt"));
 
         int arCount = scanner.nextInt();
+        
+        
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        long[] ar = new long[arCount];
+        int[] ar = new int[arCount];
 
         String[] arItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int i = 0; i < arCount; i++) {
-            long arItem = Long.parseLong(arItems[i]);
+            int arItem = Integer.parseInt(arItems[i]);
             ar[i] = arItem;
         }
 
-        long result = aVeryBigSum(ar);
+        int result = birthdayCakeCandles(ar);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
